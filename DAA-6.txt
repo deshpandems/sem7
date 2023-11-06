@@ -1,0 +1,23 @@
+practical 6
+
+
+def quick(sequence):
+   length = len(sequence)
+   if length<=1:
+      return sequence
+   else:
+      pivot = sequence.pop()
+   
+   item_greater = []
+   item_lower = []
+   
+   for item in sequence:
+      if item>pivot:
+         item_greater.append(item)
+      else:
+         item_lower.append(item)
+         
+   return quick(item_lower) + [pivot] + quick(item_greater)
+   
+print(quick([33,45,33,67,1,767,87,4,33,2,0]))
+
